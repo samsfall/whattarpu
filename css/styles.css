@@ -312,3 +312,8 @@ html, body { overflow-x: hidden; }
 .opcional { font-weight: 400; color: var(--tinta-2); font-size: 14px; }
 .pasos { padding-left: 22px; margin: 6px 0; display: grid; gap: 8px; }
 .chip:disabled { background: var(--cielo-2); color: var(--tinta-2); box-shadow: none; cursor: not-allowed; opacity: .7; }
+
+.chip small.cuantos { color: var(--selva); font-weight: 700; text-transform: none; }
+.chip:disabled small.cuantos { display: none; }
+ul.motivos { margin: 6px 0 0; padding-left: 20px; }
+ul.motivos li { margin: 4px 0; }

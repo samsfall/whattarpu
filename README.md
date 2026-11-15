@@ -2,18 +2,18 @@
 
 App del equipo para el reto «Field Shift: Adapting Farms with NASA Data» (NASA Space Apps 2026).
 
-Herramienta de apoyo para que familias agropecuarias del altiplano de Puno (Perú) comparen **qué rotación de cultivos sembrar y cuándo**, usando el clima histórico de su zona (NASA POWER, desde 1981) y fichas técnicas del INIA. Reto **Field Shift: Adapting Farms with NASA Data** – NASA Space Apps Challenge 2026.
+**¿Qué te conviene sembrar y cuándo?** Herramienta de apoyo para que familias agropecuarias del altiplano de Puno (Perú) comparen **qué rotación de cultivos sembrar y cuándo**, usando el clima histórico de su zona (NASA POWER, desde 1981) y fichas técnicas del INIA. Reto **Field Shift: Adapting Farms with NASA Data** – NASA Space Apps Challenge 2026.
 
 > Te ayuda a decidir; no reemplaza el criterio del agricultor ni a su técnico.
 
-**Quick start (English):** open the live app at `https://<usuario>.github.io/whattarpu/` on a phone, tap *Empezar*, choose a location (GPS or one of the test districts in Puno) and answer 5 questions. The app compares the farmer's current rotation with two alternatives (one may be the next step of the traditional Andean *aynoka* rotation), using frost history from NASA POWER. Five test scenarios with real data are described in `docs/escenarios.md`. Run the tests with `npm test` (Node 18+).
+**Quick start (English):** open the live app at `https://samsfall.github.io/whattarpu/` on a phone, tap *Empezar*, choose a province, district and village in Puno (or use GPS) and answer 6 questions. The app compares the farmer's current rotation with two alternatives (one may be the next step of the traditional Andean *aynoka* rotation), showing how much frost and drought each crop withstands using NASA POWER data since 1981, and gives a 7-day frost alert for the crop already sown. Five test scenarios with real data are described in `docs/escenarios.md`. Run the tests with `npm test` (Node 18+).
 
 ## Qué hace
 
-1. **Ubica la zona** (GPS, lista de distritos o coordenadas) y muestra que el dato de clima cubre un cuadro de ~50 km.
-2. **Pregunta** qué tuvo antes la chacra, cuánto tiempo la trabaja desde el último descanso, acceso al agua, mano de obra, prioridad (comida, forraje o venta) y mes de siembra.
-3. **Compara 3 rotaciones**: la actual y dos alternativas, ordenadas por la prioridad del agricultor, la época de siembra, las reglas de rotación (nematodo, descanso) y el paso que sigue en la aynoka. Para cada una muestra fecha de siembra, riesgo de helada comparado entre las tres, calendario, y por qué, evidencia, beneficios, vacíos y riesgos, con enlace a la fuente.
-4. **Ya sembré**: etapa aproximada del cultivo y frecuencia histórica de heladas del mes.
+1. **Ubica la chacra** (GPS, o provincia → distrito → centro poblado de Puno), la muestra en un mapa satelital o de calles donde se puede mover el punto, calcula su altura (SRTM) y avisa que el dato de clima cubre un cuadro de ~50 km.
+2. **Pregunta** qué tuvo antes la chacra, cuánto tiempo la trabaja desde el último descanso, acceso al agua, mano de obra, prioridad (comida, forraje o venta) y mes de siembra. Los meses se cruzan con la chacra: un cultivo cuenta en un mes solo si el INIA dice que se siembra ese mes, la zona es apta para él (altura, lluvia o riego, suelo) y no le caen heladas fuertes; cada mes dice entre cuántos cultivos puede elegir el agricultor (uno por chacra) y los meses sin ninguno salen apagados con el motivo.
+3. **Compara 3 rotaciones**: la actual y dos alternativas, ordenadas por la prioridad del agricultor, la época de siembra, las reglas de rotación (nematodo, descanso) y el paso que sigue en la aynoka. Para cada una muestra fecha de siembra, **¿aguanta el frío?** (noches bajo la temperatura que daña a ese cultivo) y **¿aguanta la sequía?** (años secos bajo la lluvia que necesita; con riego no limita), si la zona es apta (altura, lluvia, pH y textura), calendario, y por qué, evidencia, beneficios, vacíos y riesgos, con enlace a la fuente.
+4. **Ya sembré**: etapa aproximada del cultivo, frecuencia histórica de heladas del mes y **pronóstico de heladas de 7 días** en el punto de la chacra (Open-Meteo), comparado con el frío que daña a ese cultivo. Se rotula como no oficial y enlaza los avisos del Senamhi.
 5. **Ayuda** en todas las pantallas: palabras simples, de dónde salen los datos y lectura en voz alta.
 
 Las reglas son explícitas (sin IA) y cada dato del catálogo tiene su fuente. Lo que no tiene fuente se muestra como "lo que aún no sabemos".
@@ -27,24 +27,27 @@ index.html                 Página única de la app (y su política de seguridad
 css/styles.css             Colores, letras y formas
 js/app.js                  Arranque y navegación entre pantallas
 js/estado.js               Lo que respondió el agricultor en esta consulta (solo en memoria)
-js/pantallas/              Una pantalla por ID del Excel de flujos v4
+js/pantallas/              Una pantalla por ID del Excel de flujos v6
   a-entrada.js             A1–A4  Bienvenida, zona, mapa, ¿qué necesitas?
   b-sembrar.js             B1–B10 Voy a sembrar: preguntas y resultado
   c-sembre.js              C1–C5  Ya sembré
   d-e-cierre.js            D1, E1 Pérdida y ¿te sirvió?
   f-ayuda.js               F1–F2  Glosario y fuentes (listas editables)
 js/ui/piezas.js            Botones, tarjetas, iconos y avisos reutilizables
-js/ui/mensajes.js          Avisos del Senamhi como mensajes
-js/servicios/datos.js      Conexión con NASA POWER, SoilGrids, avisos y archivos de data/
-js/servicios/mapa.js       Mapa satelital (NASA GIBS + Leaflet)
+js/ui/mensajes.js          Pronóstico de heladas y enlace a los avisos del Senamhi, como mensajes
+js/servicios/datos.js      Conexión con NASA POWER, SoilGrids, altura, pronóstico y archivos de data/; cruce de meses
+js/servicios/mapa.js       Mapa satelital (NASA GIBS) o de calles (OpenStreetMap), con Leaflet
 js/servicios/voz.js        Leer en voz alta (voz del navegador)
-js/rules.js                Motor de reglas: 3 rotaciones, fecha de siembra, riesgo de helada
-js/clima.js, suelo.js, avisos.js   Cálculos puros con cada fuente (con pruebas)
+js/rules.js                Motor de reglas: 3 rotaciones, fecha de siembra, aguante y aptitud de cada cultivo
+js/aguante.js, aptitud.js, sequia.js   Aguante al frío y a la sequía, aptitud de la zona y años secos (SPI)
+js/clima.js, suelo.js, avisos.js, pronostico.js   Cálculos puros con cada fuente (con pruebas)
 js/config.js               Enlaces y portada editables
 data/catalogo.json         Cultivos y fichas INIA con su fuente  ← agregar cultivos aquí
-data/zonas.json            Distritos con coordenadas            ← agregar zonas aquí
+data/zonas.json            Zonas piloto con estación del Senamhi
+data/puno/                 Distritos y centros poblados de Puno (INEI)
+data/fuentes/ecocrop.json  Requisitos de cultivos de ECOCROP (FAO)
 data/historial/            Historial NASA por zona (lo crea el script)
-data/avisos.json           Avisos del Senamhi (lo crea el script)
+data/avisos.json           Avisos del Senamhi en formato CAP (vacío: el Senamhi aún no publica ese canal)
 scripts/                   Descargas de datos (POWER, Earthdata, avisos)
 tests/                     Pruebas de las reglas y cálculos (npm test)
 pruebas-pantallas/         Pruebas que recorren la app en Chrome (npm run probar-pantallas)
@@ -63,7 +66,7 @@ docs/flujo.md              Mapa de pantallas y estado de cada una
 
 ## Cómo probar
 
-**En el celular (lo más fácil):** abre el enlace de GitHub Pages del repositorio.
+**En el celular (lo más fácil):** abre https://samsfall.github.io/whattarpu/
 
 **En tu computadora:**
 
@@ -88,9 +91,16 @@ docs/flujo.md              Mapa de pantallas y estado de cada una
 | NASA POWER (T2M_MIN, PRECTOTCORR) | NASA | Heladas y lluvia diarias desde 1981 | https://power.larc.nasa.gov/ |
 | Fichas técnicas INIA (papa INIA 317, quinua Salcedo, avena INIA 902) | Perú | Época de siembra, duración, tolerancia a heladas | ver `data/catalogo.json` |
 | Hoja volante INIA: nematodo quiste de la papa | Perú | Regla de rotación | ver `data/catalogo.json` |
-| Senamhi | Perú | Avisos oficiales (enlace) | https://www.senamhi.gob.pe/ |
+| NASA GIBS (MODIS) | NASA | Foto satelital del mapa y vigor de la vegetación (NDVI) | https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api |
+| SRTM (NASA), vía OpenTopoData | NASA | Altura del punto de la chacra | https://www.opentopodata.org/datasets/srtm/ |
+| SoilGrids (ISRIC) | Abierto | pH y textura estimados del suelo | https://soilgrids.org/ |
+| ECOCROP (FAO) | FAO | Requisitos de cada cultivo y frío que lo daña | ver `data/fuentes/ecocrop.json` |
+| Distritos y centros poblados (INEI) | Perú | Ubicar la chacra | https://github.com/jmcastagnetto/ubigeo-peru-aumentado |
+| OpenStreetMap | Abierto | Calles y caminos del mapa | https://www.openstreetmap.org/copyright |
+| Open-Meteo, API de pronóstico | Abierto | Mínima de los próximos 7 días en la chacra (aviso de helada no oficial) | https://open-meteo.com/en/docs |
+| Senamhi | Perú | Avisos oficiales (enlace a su página; no publica canal CAP para Perú en el registro de la OMM) | https://www.senamhi.gob.pe/?&p=aviso-meteorologico |
 
-Siguiente etapa: SMAP, MODIS NDVI, ECOSTRESS (NASA Earthdata), Sentinel-2 y ERA5 (Copernicus), SoilGrids y FAO GAEZ.
+Siguiente etapa: SMAP, temperatura MODIS de noche, IMERG (NASA Earthdata) y los avisos de lluvia del Senamhi que publica el INDECI (GEOSINPAD).
 
 ## Uso de inteligencia artificial
 
@@ -108,7 +118,7 @@ MIT. Los datos de NASA POWER son públicos; las fichas del INIA se citan con su 
 
 - **Estructura:** un archivo por camino de pantallas, servicios separados para cada conexión, y datos editables sin tocar código (`data/`). Las reglas son funciones puras con pruebas (`npm test`) y la app completa tiene pruebas de pantallas (`npm run probar-pantallas`).
 - **Sin dependencias de terceros en tiempo de ejecución** salvo Leaflet, copiado en `vendor/` (sin CDN).
-- **Política de seguridad (CSP)** en `index.html`: solo corre código propio y solo se conecta a NASA POWER, NASA GIBS y SoilGrids.
+- **Política de seguridad (CSP)** en `index.html`: solo corre código propio y solo se conecta a NASA POWER, NASA GIBS, SoilGrids, OpenTopoData (altura SRTM), Open-Meteo (altura de respaldo y pronóstico) y OpenStreetMap.
 - **Texto escapado:** todo dato que viene de afuera pasa por `esc()` antes de mostrarse.
 - **Sin datos personales:** la app no guarda nada del agricultor ni usa cookies. Las claves (Earthdata) van en `.env`, que no se sube al repositorio, o en los *secrets* de GitHub.
 - **Revisor de código:** ESLint (`npm run revisar`) y las pruebas corren solas en GitHub en cada cambio.
@@ -117,7 +127,8 @@ MIT. Los datos de NASA POWER son públicos; las fichas del INIA se citan con su 
 ## Libro catálogo de requisitos
 
 - `data/catalogo.json` → `requisitos` de cada cultivo: temperatura, lluvia anual, pH, textura, altura y temperatura que mata, cada uno con su `fuente`.
-- Fuente base: ECOCROP (FAO, hoy en la plataforma GAEZ), en `data/fuentes/ecocrop.json`. Si hay dato local (fichas INIA, Salcedo), ese manda.
+- Fuente base: ECOCROP (FAO, hoy en la plataforma GAEZ), en `data/fuentes/ecocrop.json`. Si hay dato local (fichas INIA, Salcedo), ese manda: por ejemplo, la quinua usa −2 °C de la ficha INIA Salcedo y no −8 °C de ECOCROP.
+- Estos requisitos vienen de esas fuentes y **aún no están validados por la agrónoma del equipo**.
 - `js/aptitud.js` compara cada requisito con tu zona (NASA POWER + SoilGrids o tu análisis) → Apta / Apta con límites / No apta. Se ve en B7 y en B9 «¿Tu zona es apta?».
 - La textura sale del triángulo textural USDA (12 clases, `js/suelo.js`) y se agrupa en gruesa/media/fina como pide ECOCROP. B10 dibuja el punto en el triángulo.
 - `npm run catalogo` genera `docs/catalogo-requisitos.csv` (abre en Excel) y `docs/catalogo-requisitos.md`.
@@ -126,5 +137,5 @@ MIT. Los datos de NASA POWER son públicos; las fichas del INIA se citan con su 
 
 - `data/puno/distritos.json`: los 110 distritos de Puno (INEI) con la latitud, longitud y altitud de su capital. `data/puno/ccpp/<ubigeo>.json`: los centros poblados de cada distrito (9372 en total), que se piden solo al elegir el distrito. Fuente: Castagnetto (2021), *ubigeo-peru-aumentado* (INEI, CEPLAN, MINSA), licencia MIT.
 - Altura del punto: modelo de elevación SRTM de la NASA (30 m) vía OpenTopoData; si no responde, la altura de la capital del distrito.
-- Mapa: satélite de la NASA (GIBS) con nombres y caminos encima, o mapa de calles (OpenStreetMap). El punto se puede mover; al moverlo se recalcula la altura y, si cambia de cuadro, el clima.
+- Mapa: satélite de la NASA (GIBS) o mapa de calles (OpenStreetMap), con un botón para cambiar; si el satélite no carga, pasa solo a calles. El punto se puede mover; al moverlo se recalcula la altura y, si cambia de cuadro, el clima.
 - Las 4 zonas piloto (Ilave, Mazocruz, Ayaviri, Juliaca) usan la coordenada de su estación del Senamhi cuando se elige el distrito sin centro poblado.

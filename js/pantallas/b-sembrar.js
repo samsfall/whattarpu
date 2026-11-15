@@ -2,6 +2,7 @@
 import { MESES, MESES_LARGO } from '../rules.js';
 import { estado } from '../estado.js';
 import { climaZona } from '../aguante.js';
+import { mesesParaSembrar } from '../servicios/datos.js';
 import { esc, fuenteHtml, IC, icCultivo, nombreCultivo, cultivos, avance, actividad, tiles, acciones, aviso, ventana } from '../ui/piezas.js';
 
 const COLOR = { si: 'Bajo', riego: 'Bajo', casi: 'Medio', cuesta: 'Alto' };
@@ -42,19 +43,34 @@ export const PANTALLAS_B = {
       ${acciones('B6', { listo: !!p })}`;
   },
 
-  // B6: los 12 meses desde hoy. Los meses en que ningún cultivo del catálogo se siembra en Puno salen apagados, con el motivo.
+  // B6: los 12 meses desde hoy. Cada mes cruza las fichas del INIA con tu chacra (aptitud de la zona, riego y heladas).
+  // Un mes sin ningún cultivo posible sale apagado, con el motivo.
   B6: () => {
-    const elegido = estado.entrada.mesSiembra; const siembra = mesesConSiembra();
+    const elegido = estado.entrada.mesSiembra; const cruce = mesesParaSembrar();
     const meses = proximos12();
-    const apagados = meses.filter(([m]) => !siembra.has(m));
+    const lista = (ids) => ids.map((id) => nombreCultivo(id).toLowerCase()).join(', ');
+    const n = (m) => cruce[m].cultivos.length;
+    const apagados = meses.filter(([m]) => !n(m));
+    const sinInia = apagados.filter(([m]) => !cruce[m].inia.length).map(([m]) => MESES_LARGO[m - 1]);
+    const otros = apagados.filter(([m]) => cruce[m].inia.length).map(([m]) => {
+      const r = cruce[m]; const partes = [];
+      r.noApto.forEach((id) => partes.push(`${nombreCultivo(id).toLowerCase()}: tu chacra no cumple lo que necesita${r.motivos[id]?.length ? ` (${r.motivos[id].join(', ')})` : ''}`));
+      if (r.helada.length) partes.push(`${lista(r.helada)}: sembrado ese mes, le caerían heladas fuertes en tu zona`);
+      return `<li><b>${MESES_LARGO[m - 1][0].toUpperCase() + MESES_LARGO[m - 1].slice(1)}:</b> lo que se siembra ese mes no te sirve: ${partes.join('; ')}.</li>`;
+    });
+    const mesElegido = elegido && elegido !== 'auto' ? Number(elegido.split('-')[1]) : null;
     return `${avance(6, 6)}<h1>¿Cuándo quieres sembrar?</h1>
       <p class="sub">Elige el mes que tienes pensado, o deja que la app te proponga la mejor fecha para cada cultivo.</p>
       <div class="chips" role="group">
         <button class="chip ancho ${elegido === 'auto' ? 'elegida' : ''}" data-campo="mesSiembra" data-valor="auto" aria-pressed="${elegido === 'auto'}">${IC('idea')} Que la app me sugiera</button>
-        ${meses.map(([m, a]) => { const v = `${a}-${String(m).padStart(2, '0')}`; const ok = siembra.has(m);
-          return `<button class="chip ${elegido === v ? 'elegida' : ''}" ${ok ? `data-campo="mesSiembra" data-valor="${v}"` : 'disabled aria-disabled="true"'} aria-pressed="${elegido === v}">${MESES_LARGO[m - 1]}<small>${a}</small></button>`; }).join('')}
+        ${meses.map(([m, a]) => { const v = `${a}-${String(m).padStart(2, '0')}`; const ok = n(m) > 0;
+          return `<button class="chip ${elegido === v ? 'elegida' : ''}" ${ok ? `data-campo="mesSiembra" data-valor="${v}"` : 'disabled aria-disabled="true"'} aria-pressed="${elegido === v}">${MESES_LARGO[m - 1]}<small>${a}</small>${ok ? `<small class="cuantos">${n(m)} ${n(m) === 1 ? 'opción' : 'opciones'}</small>` : ''}</button>`; }).join('')}
       </div>
-      ${apagados.length ? `<p class="leyenda">${IC('alerta')} Los meses en gris (${apagados.map(([m]) => MESES_LARGO[m - 1]).join(', ')}) no se pueden elegir: en Puno ningún cultivo de la app se siembra en esos meses, según las fichas del INIA.</p>` : ''}
+      ${mesElegido && n(mesElegido) ? `<p class="leyenda">${IC('brote')} En ${MESES_LARGO[mesElegido - 1]}, en tu chacra puedes elegir uno de estos cultivos: <b>${lista(cruce[mesElegido].cultivos)}</b>.</p>` : ''}
+      ${apagados.length ? `<div class="leyenda">${IC('alerta')} Los meses en gris no se pueden elegir:<ul class="motivos">
+        ${sinInia.length ? `<li><b>${sinInia.join(', ')}:</b> según las fichas del INIA, en Puno ningún cultivo de la app se siembra en ${sinInia.length > 1 ? 'esos meses' : 'ese mes'}.</li>` : ''}
+        ${otros.join('')}</ul></div>` : ''}
+      <p class="leyenda">Cada mes cruza la época de siembra del INIA con tu chacra: altura, lluvia o riego, suelo y heladas de tu zona.</p>
       ${acciones('B7', { texto: 'Ver opciones', listo: !!elegido })}`;
   },
 
@@ -231,16 +247,6 @@ function resumenZona() {
     <div class="fila-dato"><span>${IC('descanso')} Textura</span><b>${tex ?? 'cargando…'}${estado.entrada.textura ? ' (tu análisis)' : tex ? ' (estimada)' : ''}</b></div></div>`;
 }
 
-/** Meses (1–12) en que algún cultivo del catálogo se siembra, según su época con fuente. */
-function mesesConSiembra() {
-  const meses = new Set();
-  for (const c of Object.values(estado.catalogo.cultivos)) {
-    if (!c.siembra) continue;
-    const a = Number(c.siembra.desde.slice(0, 2)); const b = Number(c.siembra.hasta.slice(0, 2));
-    for (let m = a; ; m = m % 12 + 1) { meses.add(m); if (m === b) break; }
-  }
-  return meses;
-}
 /** Los 12 meses desde este, en orden: [mes, año]. */
 function proximos12() {
   const hoy = new Date(); const lista = [];

@@ -1,6 +1,6 @@
 // Guarda la app en el celular para que funcione sin internet después de la primera visita.
 // Las tablas de clima (data/historial) también quedan guardadas cuando se consultan.
-const VERSION = 'whattarpu-v17';
+const VERSION = 'whattarpu-v19';
 // Primero la red y, sin internet, lo guardado: con internet siempre se ve la versión más nueva.
 const BASE = ['./', 'index.html', 'css/styles.css', 'js/app.js', 'js/estado.js', 'js/pantallas/index.js', 'js/pantallas/a-entrada.js', 'js/pantallas/b-sembrar.js', 'js/pantallas/c-sembre.js', 'js/pantallas/d-e-cierre.js', 'js/pantallas/f-ayuda.js', 'js/ui/piezas.js', 'js/ui/mensajes.js', 'js/servicios/datos.js', 'js/servicios/mapa.js', 'js/servicios/voz.js', 'js/rules.js', 'js/sequia.js', 'js/aptitud.js', 'js/aguante.js', 'js/pronostico.js', 'js/clima.js', 'js/config.js', 'js/suelo.js', 'js/avisos.js', 'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css',
   'data/catalogo.json', 'data/zonas.json', 'data/puno/distritos.json', 'manifest.webmanifest',

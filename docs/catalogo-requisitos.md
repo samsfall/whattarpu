@@ -20,7 +20,7 @@ Generado desde `data/catalogo.json` con `npm run catalogo`. La app compara tu zo
 | Quinua (*Chenopodium quinoa*) | Lluvia al año (mm) | 500 a 1000 | 250 a 2600 | [ECOCROP (FAO)](https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2509) |
 | Quinua (*Chenopodium quinoa*) | pH del suelo | 5.5 a 7.8 | 4.5 a 9.5 | [Salcedo (quinua) + ECOCROP (FAO)](https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2509) — rango óptimo de la ficha Salcedo INIA; rango aceptable de ECOCROP |
 | Quinua (*Chenopodium quinoa*) | Textura del suelo | fina, media, gruesa | fina, media, gruesa | [ECOCROP (FAO)](https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2509) |
-| Quinua (*Chenopodium quinoa*) | Temperatura que mata (°C) |  | en crecimiento: -8; en reposo: -8 | [ECOCROP (FAO)](https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2509) |
+| Quinua (*Chenopodium quinoa*) | Temperatura que mata (°C) |  | en crecimiento: -2 | [Salcedo (quinua)](https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2509) — la ficha INIA de la variedad Salcedo la da resistente hasta −2 °C; ECOCROP da −8 °C para la especie (dato local manda) |
 | Quinua (*Chenopodium quinoa*) | Altura (m) | 1284 a 3950 |  | [Salcedo (quinua)](https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/78/1/Trip-Quinua_Salcedo_INIA.pdf) — rango de la variedad (dato local, tiene prioridad) |
 | Cebada (*Hordeum vulgare*) | Temperatura media del ciclo (°C) | 15 a 20 | 2 a 40 | [ECOCROP (FAO)](https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1232) — temperatura media de los meses de cultivo |
 | Cebada (*Hordeum vulgare*) | Lluvia al año (mm) | 500 a 1000 | 200 a 2000 | [ECOCROP (FAO)](https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1232) |

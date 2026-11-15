@@ -13,7 +13,7 @@ Los IDs coinciden con el Excel `Whattarpu_Flujos_Pantallas_v5.xlsx`. Estado: ✅
 | B3 | Acceso al agua | 🟡 | Regla validada |
 | B4 | Mano de obra | 🟡 | Regla validada |
 | B5 | Prioridad | ✅ | |
-| B6 | Mes para sembrar | ✅ | Fila compacta: solo meses de siembra INIA, de hoy hacia adelante, más «Que la app me sugiera» |
+| B6 | Mes para sembrar | ✅ | 12 meses desde hoy más «Que la app me sugiera». Cada mes cruza la época INIA con la chacra (aptitud de la zona, riego, heladas fuertes); los meses sin cultivo posible salen apagados con el motivo y cada mes dice entre cuántas opciones de cultivo se puede elegir (uno por chacra) |
 | B7 | 3 rotaciones | ✅ | Riesgo de sequía (falta definir "año seco") |
 | B8 | Calendario de la campaña | 🟡 | Etapas con grados día |
 | B9 | Detalle de una rotación | ✅ | |
@@ -21,7 +21,7 @@ Los IDs coinciden con el Excel `Whattarpu_Flujos_Pantallas_v5.xlsx`. Estado: ✅
 | C1 | Cultivo y fecha | ✅ | |
 | C2 | Etapa y riesgo | 🟡 | Etapas con grados día; SMAP |
 | C3 | ¿Qué tan verde está tu zona? (NDVI) | 🟡 | Conectado a MODIS NDVI 8 días (GIBS, 250 m). Pendiente: detalle de chacra con Sentinel-2 o Landsat |
-| C4 | Avisos del Senamhi como mensajes (CAP de la OMM) | 🟡 | Verificar el canal en la primera corrida de `npm run avisos` |
+| C4 | Avisos: pronóstico de heladas de 7 días (Open-Meteo) para el cultivo y enlace al Senamhi | 🟡 | El Senamhi no publica canal CAP; probar los avisos de lluvia del INDECI (GEOSINPAD). Acción recomendada con fuente: pendiente |
 | C5 | Próxima campaña | ✅ | |
 | D1 | Dónde reportar | 🟡 | Directorio de agencias agrarias de Puno |
 | E1 | ¿Te sirvió? | 🟡 | Enlace a formulario en `js/config.js` |

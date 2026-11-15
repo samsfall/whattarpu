@@ -5,7 +5,7 @@ import { esc, IC, paisaje, aviso, acciones } from '../ui/piezas.js';
 import { mensajesSenamhi, mensajeHelada } from '../ui/mensajes.js';
 
 export const PANTALLAS_A = {
-  A1: () => `${paisaje('¿Qué sembrar y cuándo?', 'Con datos de satélite de la NASA, para tu chacra')}
+  A1: () => `${paisaje('¿Qué te conviene sembrar y cuándo?', 'Con datos de satélite de la NASA, para tu chacra')}
     <div class="tarjeta centro">${IC('agricultora', 'ilus-grande')}
       <p>Te ayudamos a elegir qué sembrar y cuándo en tu chacra, según el clima de tu zona (datos de la NASA desde 1981) y las fichas del INIA.</p></div>
     ${aviso('info', 'mano', 'Te ayuda a decidir. <b>No reemplaza tu criterio ni a tu técnico.</b>')}

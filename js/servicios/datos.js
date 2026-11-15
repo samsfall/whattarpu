@@ -1,5 +1,5 @@
 // Conexión con las fuentes de datos. Cada función devuelve el dato o null si no hay conexión: la app nunca se cae por una fuente.
-import { tresRotaciones } from '../rules.js';
+import { tresRotaciones, armarOpcion } from '../rules.js';
 import { urlPower, leerPower, tablaZona, urlPowerClimatologia, leerClimatologia } from '../clima.js';
 import { lluviaAnualProm } from '../aptitud.js';
 import { urlSoilGrids, leerSoilGrids } from '../suelo.js';
@@ -69,17 +69,55 @@ async function completarTemperatura(h, z) {
   return h;
 }
 
-export function calcular() {
+/** Lo que el motor necesita: respuestas del agricultor + condiciones de la zona (suelo, lluvia, altura). Sin el mes. */
+function entradaMotor() {
   const phAnalisis = estado.entrada.ph ? Number(String(estado.entrada.ph).replace(',', '.')) : null;
-  // Mes que eligió el agricultor, o 'auto' para que la app proponga la fecha de cada cultivo
-  const [anio, mes] = (estado.entrada.mesSiembra || 'auto').split('-').map(Number);
-  if (mes) { estado.entrada.anioSiembra = anio; } else { delete estado.entrada.anioSiembra; }
-  const entrada = { ...estado.entrada, mes: mes || undefined, phSuelo: Number.isFinite(phAnalisis) ? phAnalisis : estado.suelo?.ph ?? null, phEsAnalisis: Number.isFinite(phAnalisis) };
+  const entrada = { ...estado.entrada, mes: undefined, phSuelo: Number.isFinite(phAnalisis) ? phAnalisis : estado.suelo?.ph ?? null, phEsAnalisis: Number.isFinite(phAnalisis) };
   entrada.altitud = estado.zona?.altitud ?? estado.historial?.zona?.altitudM ?? null;
   // Condiciones de la zona para la aptitud: el análisis del agricultor manda sobre el estimado
   const grupoAnalisis = { Arenosa: 'gruesa', 'Franco arenosa': 'gruesa', Franca: 'media', 'Franco limosa': 'media', 'Franco arcillosa': 'media', Arcillosa: 'fina' }[estado.entrada.textura];
   entrada.condiciones = { lluviaAnual: lluviaAnualProm(estado.historial?.historial), ph: entrada.phSuelo, grupoTextura: grupoAnalisis || estado.suelo?.grupoTextura || null, altitud: entrada.altitud };
+  return entrada;
+}
+
+export function calcular() {
+  // Mes que eligió el agricultor, o 'auto' para que la app proponga la fecha de cada cultivo
+  const [anio, mes] = (estado.entrada.mesSiembra || 'auto').split('-').map(Number);
+  if (mes) { estado.entrada.anioSiembra = anio; } else { delete estado.entrada.anioSiembra; }
+  const entrada = { ...entradaMotor(), mes: mes || undefined };
   estado.opciones = tresRotaciones(entrada, estado.catalogo, estado.historial?.historial || null, estado.historial?.lluviaMensual || null);
+}
+
+/** Meses de la época de siembra de un cultivo (fichas INIA), de 1 a 12. */
+export function mesesVentana(c) {
+  if (!c.siembra) return [];
+  const a = Number(c.siembra.desde.slice(0, 2)); const b = Number(c.siembra.hasta.slice(0, 2)); const lista = [];
+  for (let m = a; ; m = m % 12 + 1) { lista.push(m); if (m === b) break; }
+  return lista;
+}
+
+/**
+ * Cruce para cada mes (1–12): qué cultivos se pueden sembrar en ESTA chacra.
+ * Un cultivo cuenta si (1) el INIA dice que se siembra ese mes en Puno, (2) la zona es apta para él
+ * (altura, lluvia o riego, pH y textura; ECOCROP/INIA) y (3) sembrado ese mes no le caen heladas fuertes
+ * según el historial de la zona (nivel "cuesta" del aguante). Devuelve { mes: { cultivos, inia, noApto, helada, motivos } } (motivos: requisitos que la zona no cumple).
+ */
+export function mesesParaSembrar() {
+  const base = entradaMotor(); const cat = estado.catalogo;
+  const h = estado.historial?.historial || null; const ll = estado.historial?.lluviaMensual || null;
+  const res = {};
+  for (let m = 1; m <= 12; m++) res[m] = { cultivos: [], inia: [], noApto: [], helada: [], motivos: {} };
+  for (const [id, c] of Object.entries(cat.cultivos)) {
+    if (!c.duracionDias) continue;
+    for (const m of mesesVentana(c)) {
+      const r = res[m]; r.inia.push(id);
+      const op = armarOpcion('alternativa', id, { ...base, mes: m }, cat, h, ll);
+      if (op.aptitud?.resultado === 'no_apto') { r.noApto.push(id); r.motivos[id] = op.aptitud.items.filter((i) => i.estado === 'fuera').map((i) => i.nombre.toLowerCase()); }
+      else if (op.nivelFrio === 'cuesta') r.helada.push(id);
+      else r.cultivos.push(id);
+    }
+  }
+  return res;
 }
 
 /** Centros poblados de un distrito (INEI): [[nombre, lat, lon], ...]. Se piden solo cuando se elige el distrito. */

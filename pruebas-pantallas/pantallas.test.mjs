@@ -89,9 +89,15 @@ test('El mes: los 12 meses desde hoy; los que no tienen siembra salen apagados c
   assert.match(await pg.textContent('h1'), /Cuándo quieres sembrar/);
   assert.equal(await pg.locator('.chips .chip:not(.ancho)').count(), 12);
   if (await pg.locator('.chips .chip:disabled').count()) assert.match(await pg.textContent('main'), /no se pueden elegir/);
+  assert.match(await pg.textContent('main'), /cruza la época de siembra del INIA con tu chacra/);
+  const habilitados = pg.locator('.chips .chip[data-valor^="20"]');
+  assert.ok(await habilitados.count() > 0, 'hay al menos un mes posible');
+  assert.match(await habilitados.first().textContent(), /\d+ (opción|opciones)/);
   const meses = await pg.locator('.chip[data-valor^="20"]').evaluateAll((bs) => bs.map((b) => b.dataset.valor));
   assert.deepEqual([...meses].sort(), meses, 'los meses van hacia adelante');
-  await pg.click(`.chip[data-valor="${meses[0]}"]`); await pg.click('text=Ver opciones');
+  await pg.click(`.chip[data-valor="${meses[0]}"]`);
+  assert.match(await pg.textContent('main'), /puedes elegir uno de estos cultivos/);
+  await pg.click('text=Ver opciones');
   await pg.waitForSelector('text=Rotación de cultivos');
   assert.match(await pg.textContent('main'), /Cuándo sembrar/);
   assert.deepEqual(errores, []);
@@ -222,7 +228,7 @@ test('Empezar de nuevo vuelve al inicio y borra la consulta', async () => {
   await pg.click('text=Terminar');
   await pg.click('.tile:has-text("Sí")'); await pg.click('#enviar');
   await pg.click('#reiniciar');
-  assert.match(await pg.textContent('main'), /¿Qué sembrar y cuándo\?/);
+  assert.match(await pg.textContent('main'), /¿Qué te conviene sembrar y cuándo\?/);
   await pg.click('text=Empezar');
   assert.equal(await pg.inputValue('#provincia'), '');
   await cerrar();

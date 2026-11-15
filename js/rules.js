@@ -184,7 +184,11 @@ export function tresRotaciones(entrada, catalogo, historial, lluvia = null) {
     .map((id) => armarOpcion('alternativa', id, entrada, catalogo, historial, lluvia))
     .map((op) => ({ op, puntos: puntaje(op, entrada, catalogo, aynoka) }))
     .sort((a, b) => b.puntos - a.puntos || (a.op.aguanteFrio?.noches ?? 1e9) - (b.op.aguanteFrio?.noches ?? 1e9));
-  const alternativas = candidatos.slice(0, 2).map((x, i) => {
+  // Con un mes elegido, las alternativas salen de lo que de verdad se puede sembrar ese mes en esta chacra
+  // (mismo cruce que la pantalla del mes): época INIA, zona apta y sin heladas fuertes. Si no alcanzan, se usan todas.
+  const posibles = entrada.mes == null ? candidatos : candidatos.filter(({ op }) => op.cultivoId === 'descanso'
+    || (op.siembra?.coincide && op.aptitud?.resultado !== 'no_apto' && op.nivelFrio !== 'cuesta'));
+  const alternativas = (posibles.length >= 2 ? posibles : candidatos).slice(0, 2).map((x, i) => {
     const op = x.op;
     op.tipo = i === 0 ? 'adaptada' : 'tradicional';
     op.titulo = `Alternativa ${i + 1}`;

@@ -322,9 +322,10 @@
           "fuente": "ecocrop"
         },
         "heladaMata": {
-          "enCrecimiento": -8.0,
-          "enReposo": -8.0,
-          "fuente": "ecocrop"
+          "enCrecimiento": -2,
+          "enReposo": null,
+          "fuente": "salcedo",
+          "nota": "la ficha INIA de la variedad Salcedo la da resistente hasta −2 °C; ECOCROP da −8 °C para la especie (dato local manda)"
         },
         "altitud": {
           "min": 1284,
