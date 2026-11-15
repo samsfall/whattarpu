@@ -1,9 +1,9 @@
-name: Avisos del Senamhi (cada 3 horas)
+name: Avisos del Senamhi (manual)
 
+# Apagado por ahora: el Senamhi no publica sus avisos en formato CAP (el Registro de Autoridades de Alerta
+# de la OMM no tiene canal para Perú). Se deja solo el botón manual "Run workflow" para cuando exista.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '23 */3 * * *'
 
 permissions:
   contents: write

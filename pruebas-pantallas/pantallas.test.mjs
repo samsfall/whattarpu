@@ -27,7 +27,7 @@ before(async () => {
 });
 after(async () => { await navegador?.close(); servidor?.close(); });
 
-async function abrir({ avisos = null } = {}) {
+async function abrir({ avisos = null, pronostico = null } = {}) {
   const contexto = await navegador.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' });
   const pg = await contexto.newPage(); const errores = [];
   pg.on('pageerror', (e) => errores.push(e.message));
@@ -37,6 +37,7 @@ async function abrir({ avisos = null } = {}) {
   await pg.route('https://tile.openstreetmap.org/**', (r) => r.abort());
   await pg.route('https://api.opentopodata.org/**', (r) => r.abort());
   await pg.route('https://api.open-meteo.com/**', (r) => r.abort());
+  if (pronostico) await pg.route('https://api.open-meteo.com/v1/forecast**', (r) => r.fulfill({ json: pronostico }));
   if (avisos) await pg.route('**/data/avisos.json', (r) => r.fulfill({ json: avisos }));
   await pg.goto(base);
   return { pg, errores, cerrar: () => contexto.close() };
@@ -128,6 +129,42 @@ test('Ya sembré muestra los mismos cultivos y funciona sin ficha INIA', async (
   await pg.click('.tile:has-text("Oca")'); await pg.click('.chips .chip >> nth=1'); await pg.click('#sig-c1');
   assert.match(await pg.textContent('main'), /Aún no tenemos la ficha INIA/);
   assert.deepEqual(errores, []);
+  await cerrar();
+});
+
+/** Pronóstico de ejemplo: 7 noches desde hoy; la tercera baja a −3,1 °C (no es un dato real). */
+function pronosticoPrueba() {
+  const time = []; const hoy = new Date();
+  for (let k = 0; k < 7; k++) { const d = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() + k); time.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`); }
+  return { daily: { time, temperature_2m_min: [2.1, 0.4, -3.1, -0.6, 1.5, 3, 2.2] } };
+}
+
+test('Pronóstico de heladas: aviso en la zona y comparado con el frío que daña al cultivo', async () => {
+  const { pg, errores, cerrar } = await abrir({ pronostico: pronosticoPrueba() });
+  await irAIlave(pg);
+  await pg.waitForSelector('.sms:has-text("Pronóstico de heladas")');
+  assert.match(await pg.textContent('.mensajes'), /Puede helar .* −3,1 °C/);
+  assert.match(await pg.textContent('.mensajes'), /No es un aviso oficial del Senamhi/);
+  await pg.click('text=Ya sembré');
+  await pg.click('.tile:has-text("Papa") >> nth=0'); await pg.click('.chips .chip >> nth=1'); await pg.click('#sig-c1');
+  await pg.click('.acciones .btn-principal'); await pg.click('.acciones .btn-principal');
+  assert.match(await pg.textContent('h1'), /Avisos/);
+  const txt = await pg.textContent('.mensajes');
+  assert.match(txt, /Helada fuerte para tu papa/); assert.match(txt, /se daña desde −2,5 °C/);
+  assert.equal(await pg.locator('.dias-pron li').count(), 7);
+  assert.equal(await pg.locator('.dias-pron li.dana').count(), 1);
+  assert.deepEqual(errores, []);
+  await cerrar();
+});
+
+test('Sin pronóstico (sin internet), Avisos lo dice y deja el enlace al Senamhi', async () => {
+  const { pg, cerrar } = await abrir();
+  await irAIlave(pg);
+  await pg.click('text=Ya sembré');
+  await pg.click('.tile:has-text("Quinua")'); await pg.click('.chips .chip >> nth=1'); await pg.click('#sig-c1');
+  await pg.click('.acciones .btn-principal'); await pg.click('.acciones .btn-principal');
+  const txt = await pg.textContent('main');
+  assert.match(txt, /no pudimos traer el pronóstico/); assert.match(txt, /Ver avisos del Senamhi/);
   await cerrar();
 });
 

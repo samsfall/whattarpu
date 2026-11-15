@@ -2,7 +2,7 @@
 import { campanaActual } from '../rules.js';
 import { estado } from '../estado.js';
 import { esc, IC, paisaje, aviso, acciones } from '../ui/piezas.js';
-import { mensajesSenamhi } from '../ui/mensajes.js';
+import { mensajesSenamhi, mensajeHelada } from '../ui/mensajes.js';
 
 export const PANTALLAS_A = {
   A1: () => `${paisaje('¿Qué sembrar y cuándo?', 'Con datos de satélite de la NASA, para tu chacra')}
@@ -46,7 +46,7 @@ export const PANTALLAS_A = {
       ${acciones('A4', { texto: 'Sí, es mi zona' })}`;
   },
 
-  A4: () => `${mensajesSenamhi(false)}<h1>¿Qué necesitas?</h1>
+  A4: () => `${mensajeHelada(null, false)}${mensajesSenamhi(false)}<h1>¿Qué necesitas?</h1>
     <button class="tarjeta camino sembrar" data-ir="B1"><span class="ilus">${IC('brote')}${IC('calendario')}</span><span><b>Voy a sembrar</b>¿Qué cultivo te conviene según el clima?</span><span class="flecha">${IC('ui-arrow-right-bold')}</span></button>
     <button class="tarjeta camino sembre" data-ir="C1"><span class="ilus">${IC('cebada')}${IC('check')}</span><span><b>Ya sembré</b>Cuéntanos cómo va tu cultivo</span><span class="flecha">${IC('ui-arrow-right-bold')}</span></button>
     <button class="tarjeta camino perdida" data-ir="D1"><span class="ilus">${IC('descanso')}${IC('alerta')}</span><span><b>Tuve una pérdida</b>Te decimos dónde reportar</span><span class="flecha">${IC('ui-arrow-right-bold')}</span></button>

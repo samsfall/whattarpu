@@ -4,6 +4,7 @@ import { urlPower, leerPower, tablaZona, urlPowerClimatologia, leerClimatologia 
 import { lluviaAnualProm } from '../aptitud.js';
 import { urlSoilGrids, leerSoilGrids } from '../suelo.js';
 import { estado } from '../estado.js';
+import { urlPronostico, leerPronostico } from '../pronostico.js';
 
 /** Catálogo de cultivos y lista de zonas (archivos de data/). */
 export async function cargarBase() {
@@ -39,6 +40,16 @@ export async function cargarSuelo(z) {
     if (!r.ok) throw new Error(r.status);
     estado.suelo = leerSoilGrids(await r.json());
   } catch (e) { console.warn('SoilGrids no disponible', e); estado.suelo = null; }
+}
+
+/** Pronóstico de mínimas de los próximos 7 días en el punto de la chacra (Open-Meteo). null = sin conexión. */
+export async function cargarPronostico(z) {
+  estado.pronostico = undefined; // undefined = cargando
+  try {
+    const r = await fetch(urlPronostico(z.lat, z.lon));
+    if (!r.ok) throw new Error(r.status);
+    estado.pronostico = leerPronostico(await r.json());
+  } catch (e) { console.warn('Pronóstico no disponible', e); estado.pronostico = null; }
 }
 
 export async function cargarAvisos() {

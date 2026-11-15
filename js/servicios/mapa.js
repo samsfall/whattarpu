@@ -1,7 +1,7 @@
 // Mapa satelital (NASA GIBS + Leaflet) con el punto movible y el cuadro de NASA POWER.
 import { estado } from '../estado.js';
 import { IC } from '../ui/piezas.js';
-import { cargarHistorial, completarAltura } from './datos.js';
+import { cargarHistorial, completarAltura, cargarPronostico } from './datos.js';
 
 let mapa = null;
 const GIBS = 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/2025-07-15/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg';
@@ -49,7 +49,7 @@ export function iniciarMapa() {
   marca.on('dragend', async () => {
     const p = marca.getLatLng();
     const antes = celdaPower(z.lat, z.lon)[0].join(); z.lat = p.lat; z.lon = p.lng;
-    z.altitud = null; z.fuenteAltitud = null; completarAltura(z);
+    z.altitud = null; z.fuenteAltitud = null; completarAltura(z); cargarPronostico(z);
     const c = document.getElementById('coord-zona'); if (c) c.textContent = `${z.lat.toFixed(3)}, ${z.lon.toFixed(3)}`;
     if (!z.movido) { z.movido = true; z.nombre = `Tu chacra, cerca de ${z.nombre}`; const n = document.getElementById('nombre-zona'); if (n) n.textContent = z.nombre; }
     const a = document.getElementById('altura-zona'); if (a) a.textContent = 'calculando…';

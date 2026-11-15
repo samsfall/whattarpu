@@ -1,7 +1,7 @@
 // Arranque y navegación. Las pantallas están en js/pantallas/, las conexiones en js/servicios/ y las reglas en js/rules.js.
 import { estado, pila, reiniciarEstado } from './estado.js';
 import { PANTALLAS } from './pantallas/index.js';
-import { cargarBase, cargarAvisos, cargarHistorial, cargarSuelo, calcular, cargarCentrosPoblados, completarAltura } from './servicios/datos.js';
+import { cargarBase, cargarAvisos, cargarHistorial, cargarSuelo, calcular, cargarCentrosPoblados, completarAltura, cargarPronostico } from './servicios/datos.js';
 import { iniciarMapa, iniciarMapaNdvi, cerrarMapa } from './servicios/mapa.js';
 import { textoParaLeer, decir, hablando, callar } from './servicios/voz.js';
 
@@ -95,6 +95,7 @@ async function elegirZona(z) {
   estado.zona = z; estado.historial = null;
   ir('A3');
   cargarSuelo(z); completarAltura(z);
+  cargarPronostico(z).then(() => { if (['A4', 'C4'].includes(estado.pantalla)) ir(estado.pantalla, { mismo: true }); });
   estado.historial = await cargarHistorial(z);
   ir('A3', { mismo: true });
   if (!estado.historial) { const m = document.getElementById('msg-hist'); if (m) m.textContent = 'No se pudo cargar el historial de clima. La app seguirá, pero sin el clima de la zona.'; }

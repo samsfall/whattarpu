@@ -2,7 +2,7 @@
 import { MESES_LARGO } from '../rules.js';
 import { estado } from '../estado.js';
 import { esc, fuenteHtml, IC, nombreCultivo, cultivos, avance, tiles, acciones, aviso, grafico } from '../ui/piezas.js';
-import { mensajesSenamhi } from '../ui/mensajes.js';
+import { mensajesSenamhi, mensajeHelada } from '../ui/mensajes.js';
 
 export const PANTALLAS_C = {
   // C · Ya sembré
@@ -43,7 +43,7 @@ export const PANTALLAS_C = {
     ${aviso('info', 'idea', 'Compara con lo que ves en tu chacra. En los primeros meses de lluvia la puna aún se ve marrón; se pone verde con el avance de la campaña.')}
     ${acciones('C4')}`,
 
-  C4: () => `<h1>Avisos para tu zona</h1>${mensajesSenamhi(true)}
+  C4: () => `<h1>Avisos para tu zona</h1>${mensajeHelada(estado.entrada.cultivoC, true)}${mensajesSenamhi(true)}
     <div class="tarjeta"><h2>${IC('brote')} Acción recomendada</h2><p class="leyenda">Tabla de acciones con fuente (Agro Rural): pendiente.</p></div>
     ${acciones('C5', { texto: 'Ver alternativa de cultivo' })}`,
 
