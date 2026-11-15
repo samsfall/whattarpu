@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <!-- Política de seguridad: solo carga código propio y se conecta solo a las fuentes de datos que usa la app.
+       El hash 'sha256-vvt4…' y ws://127.0.0.1 permiten SOLO el recargado automático de Live Server al probar en la computadora. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-vvt4KWwuNr51XfE5m+hzeNEGhiOfZzG97ccfqGsPwvE='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://gibs.earthdata.nasa.gov https://tile.openstreetmap.org; connect-src 'self' https://power.larc.nasa.gov https://rest.isric.org https://api.opentopodata.org https://api.open-meteo.com ws://127.0.0.1:* ws://localhost:*; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whattarpu – ¿Qué sembrar y cuándo?</title>
+  <link rel="icon" href="img/iconos/brote.svg" type="image/svg+xml">
+  <meta name="description" content="Herramienta de apoyo para comparar rotaciones de cultivos en Puno con datos de la NASA.">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1c4e80">
+</head>
+<body>
+  <header class="barra">
+    <div class="barra-in">
+      <div class="marca"><img src="img/iconos/brote.svg" alt=""><div>Whattarpu<small>Datos de la NASA y del Perú para tu chacra</small></div></div>
+      <nav class="ayuda" aria-label="Ayuda">
+        <button class="icono-btn" data-ir="F1"><img src="img/iconos/libros.svg" alt="">Palabras</button>
+        <button class="icono-btn" data-ir="F2"><img src="img/iconos/satelite.svg" alt="">Datos</button>
+        <button class="icono-btn voz" id="btn-voz"><span class="redondo"><img src="img/iconos/parlante.svg" alt=""></span><span class="txt">Escuchar</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="app" tabindex="-1" aria-live="polite"></main>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

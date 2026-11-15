@@ -1,0 +1,10 @@
+{
+  "name": "Whattarpu – ¿Qué sembrar y cuándo?",
+  "short_name": "Whattarpu",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#eef4f3",
+  "theme_color": "#1c4e80",
+  "lang": "es-PE",
+  "icons": [{ "src": "img/iconos/brote.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

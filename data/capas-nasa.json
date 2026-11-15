@@ -1,0 +1,7 @@
+{
+  "nota": "Capas de la NASA que se piden a AppEEARS para cada zona. Si AppEEARS cambia un nombre, el script muestra las capas disponibles.",
+  "capas": [
+    { "product": "MOD11A1.061", "layer": "LST_Night_1km", "para": "Heladas: temperatura de la superficie de noche (~1 km)" },
+    { "product": "MOD13Q1.061", "layer": "_250m_16_days_NDVI", "para": "Verdor y meses con suelo desnudo (250 m)" }
+  ]
+}

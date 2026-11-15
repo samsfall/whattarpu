@@ -1,0 +1,591 @@
+{
+ "fuente": "FAO ECOCROP. Copia de la base publicada en el paquete de Python \"ecocrop\" 0.2.0 (archivo Ecocrop_updated_1312023.xlsx). Verificada contra la ficha web de la FAO para Oxalis tuberosa (id 2371): mismos valores.",
+ "cultivos": {
+  "papa": {
+   "especie": "Solanum tuberosum",
+   "codigoEcocrop": 1971,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1971",
+   "temperatura": {
+    "optMin": 15.0,
+    "optMax": 25.0,
+    "absMin": 7.0,
+    "absMax": 30.0
+   },
+   "lluviaAnual": {
+    "optMin": 500.0,
+    "optMax": 800.0,
+    "absMin": 250.0,
+    "absMax": 2000.0
+   },
+   "ph": {
+    "optMin": 5.0,
+    "optMax": 6.2,
+    "absMin": 4.2,
+    "absMax": 8.5
+   },
+   "altitudMax": 2800.0,
+   "textura": {
+    "optima": [
+     "media"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": 0.0,
+    "enReposo": -1.0
+   },
+   "ciclo": {
+    "min": 90.0,
+    "max": 160.0
+   }
+  },
+  "papaAmarga": {
+   "especie": "Solanum x juzepczukii",
+   "codigoEcocrop": 9916,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=9916",
+   "temperatura": {
+    "optMin": 6.0,
+    "optMax": 14.0,
+    "absMin": 3.0,
+    "absMax": 18.0
+   },
+   "lluviaAnual": {
+    "optMin": 600.0,
+    "optMax": 1200.0,
+    "absMin": 400.0,
+    "absMax": 1400.0
+   },
+   "ph": {
+    "optMin": 6.0,
+    "optMax": 7.0,
+    "absMin": 5.5,
+    "absMax": 7.5
+   },
+   "altitudMax": 4300.0,
+   "textura": {
+    "optima": [
+     "media"
+    ],
+    "aceptable": [
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": null,
+    "enReposo": null
+   },
+   "ciclo": {
+    "min": 150.0,
+    "max": 195.0
+   }
+  },
+  "quinua": {
+   "especie": "Chenopodium quinoa",
+   "codigoEcocrop": 2509,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2509",
+   "temperatura": {
+    "optMin": 14.0,
+    "optMax": 18.0,
+    "absMin": 2.0,
+    "absMax": 35.0
+   },
+   "lluviaAnual": {
+    "optMin": 500.0,
+    "optMax": 1000.0,
+    "absMin": 250.0,
+    "absMax": 2600.0
+   },
+   "ph": {
+    "optMin": 5.5,
+    "optMax": 8.0,
+    "absMin": 4.5,
+    "absMax": 9.5
+   },
+   "altitudMax": 4000.0,
+   "textura": {
+    "optima": [
+     "fina",
+     "media",
+     "gruesa"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": -8.0,
+    "enReposo": -8.0
+   },
+   "ciclo": {
+    "min": 90.0,
+    "max": 240.0
+   }
+  },
+  "canihua": {
+   "especie": "Chenopodium pallidicaule",
+   "codigoEcocrop": 4494,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=4494",
+   "temperatura": {
+    "optMin": 10.0,
+    "optMax": 16.0,
+    "absMin": 5.0,
+    "absMax": 28.0
+   },
+   "lluviaAnual": {
+    "optMin": 500.0,
+    "optMax": 800.0,
+    "absMin": 300.0,
+    "absMax": 1100.0
+   },
+   "ph": {
+    "optMin": 6.0,
+    "optMax": 7.5,
+    "absMin": 4.8,
+    "absMax": 8.5
+   },
+   "altitudMax": 4400.0,
+   "textura": {
+    "optima": [
+     "media",
+     "gruesa"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": -3.0,
+    "enReposo": -10.0
+   },
+   "ciclo": {
+    "min": 90.0,
+    "max": 150.0
+   }
+  },
+  "cebada": {
+   "especie": "Hordeum vulgare",
+   "codigoEcocrop": 1232,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1232",
+   "temperatura": {
+    "optMin": 15.0,
+    "optMax": 20.0,
+    "absMin": 2.0,
+    "absMax": 40.0
+   },
+   "lluviaAnual": {
+    "optMin": 500.0,
+    "optMax": 1000.0,
+    "absMin": 200.0,
+    "absMax": 2000.0
+   },
+   "ph": {
+    "optMin": 6.5,
+    "optMax": 7.5,
+    "absMin": 6.0,
+    "absMax": 8.0
+   },
+   "altitudMax": 4400.0,
+   "textura": {
+    "optima": [
+     "media"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": 0.0,
+    "enReposo": -4.0
+   },
+   "ciclo": {
+    "min": 90.0,
+    "max": 240.0
+   }
+  },
+  "oca": {
+   "especie": "Oxalis tuberosa",
+   "codigoEcocrop": 2371,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2371",
+   "temperatura": {
+    "optMin": 12.0,
+    "optMax": 24.0,
+    "absMin": 5.0,
+    "absMax": 28.0
+   },
+   "lluviaAnual": {
+    "optMin": 800.0,
+    "optMax": 1300.0,
+    "absMin": 570.0,
+    "absMax": 2150.0
+   },
+   "ph": {
+    "optMin": 6.0,
+    "optMax": 7.0,
+    "absMin": 5.3,
+    "absMax": 7.8
+   },
+   "altitudMax": 4000.0,
+   "textura": {
+    "optima": [
+     "media",
+     "gruesa"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": null,
+    "enReposo": null
+   },
+   "ciclo": {
+    "min": 180.0,
+    "max": 270.0
+   }
+  },
+  "haba": {
+   "especie": "Vicia faba",
+   "codigoEcocrop": 2146,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2146",
+   "temperatura": {
+    "optMin": 18.0,
+    "optMax": 28.0,
+    "absMin": 5.0,
+    "absMax": 32.0
+   },
+   "lluviaAnual": {
+    "optMin": 650.0,
+    "optMax": 1000.0,
+    "absMin": 250.0,
+    "absMax": 2600.0
+   },
+   "ph": {
+    "optMin": 6.0,
+    "optMax": 7.0,
+    "absMin": 4.5,
+    "absMax": 8.6
+   },
+   "altitudMax": 2700.0,
+   "textura": {
+    "optima": [
+     "media"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": null,
+    "enReposo": null
+   },
+   "ciclo": {
+    "min": 100.0,
+    "max": 150.0
+   }
+  },
+  "avena": {
+   "especie": "Avena sativa",
+   "codigoEcocrop": 481,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=481",
+   "temperatura": {
+    "optMin": 16.0,
+    "optMax": 20.0,
+    "absMin": 5.0,
+    "absMax": 30.0
+   },
+   "lluviaAnual": {
+    "optMin": 600.0,
+    "optMax": 1000.0,
+    "absMin": 250.0,
+    "absMax": 1500.0
+   },
+   "ph": {
+    "optMin": 5.0,
+    "optMax": 6.0,
+    "absMin": 4.5,
+    "absMax": 7.5
+   },
+   "altitudMax": null,
+   "textura": {
+    "optima": [
+     "fina",
+     "media",
+     "gruesa"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": -1.0,
+    "enReposo": -15.0
+   },
+   "ciclo": {
+    "min": 110.0,
+    "max": 270.0
+   }
+  },
+  "tarwi": {
+   "especie": "Lupinus mutabilis",
+   "codigoEcocrop": 7435,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=7435",
+   "temperatura": {
+    "optMin": 18.0,
+    "optMax": 24.0,
+    "absMin": 6.0,
+    "absMax": 30.0
+   },
+   "lluviaAnual": {
+    "optMin": 500.0,
+    "optMax": 1000.0,
+    "absMin": 350.0,
+    "absMax": 1700.0
+   },
+   "ph": {
+    "optMin": 5.0,
+    "optMax": 6.5,
+    "absMin": 4.5,
+    "absMax": 7.0
+   },
+   "altitudMax": 4000.0,
+   "textura": {
+    "optima": [
+     "media",
+     "gruesa"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": -5.0,
+    "enReposo": -5.0
+   },
+   "ciclo": {
+    "min": 150.0,
+    "max": 330.0
+   }
+  },
+  "olluco": {
+   "especie": "Ullucus tuberosus",
+   "codigoEcocrop": 2120,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2120",
+   "temperatura": {
+    "optMin": 12,
+    "optMax": 20,
+    "absMin": 5,
+    "absMax": 28
+   },
+   "lluviaAnual": {
+    "optMin": 1100,
+    "optMax": 1400,
+    "absMin": 800,
+    "absMax": 1800
+   },
+   "ph": {
+    "optMin": 5.5,
+    "optMax": 6.5,
+    "absMin": 5,
+    "absMax": 7
+   },
+   "altitudMax": 4000,
+   "textura": {
+    "optima": [
+     "media"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": 0,
+    "enReposo": -4
+   },
+   "ciclo": {
+    "min": 120,
+    "max": 270
+   }
+  },
+  "trigo": {
+   "especie": "Triticum aestivum",
+   "codigoEcocrop": 2114,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2114",
+   "temperatura": {
+    "optMin": 15,
+    "optMax": 23,
+    "absMin": 5,
+    "absMax": 27
+   },
+   "lluviaAnual": {
+    "optMin": 750,
+    "optMax": 900,
+    "absMin": 300,
+    "absMax": 1600
+   },
+   "ph": {
+    "optMin": 6,
+    "optMax": 7,
+    "absMin": 5.5,
+    "absMax": 8.5
+   },
+   "altitudMax": 4500,
+   "textura": {
+    "optima": [
+     "media"
+    ],
+    "aceptable": [
+     "fina",
+     "media"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": 0,
+    "enReposo": -20
+   },
+   "ciclo": {
+    "min": 90,
+    "max": 250
+   }
+  },
+  "arveja": {
+   "especie": "Pisum sativum",
+   "codigoEcocrop": 1721,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1721",
+   "temperatura": {
+    "optMin": 10,
+    "optMax": 24,
+    "absMin": 4,
+    "absMax": 30
+   },
+   "lluviaAnual": {
+    "optMin": 800,
+    "optMax": 1200,
+    "absMin": 350,
+    "absMax": 2500
+   },
+   "ph": {
+    "optMin": 5.5,
+    "optMax": 7,
+    "absMin": 4.5,
+    "absMax": 8.3
+   },
+   "altitudMax": 2700,
+   "textura": {
+    "optima": [
+     "fina",
+     "media",
+     "gruesa"
+    ],
+    "aceptable": [
+     "fina",
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": 0,
+    "enReposo": -2
+   },
+   "ciclo": {
+    "min": 60,
+    "max": 140
+   }
+  },
+  "maizAmilaceo": {
+   "especie": "Zea mays",
+   "codigoEcocrop": 2175,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2175",
+   "temperatura": {
+    "optMin": 18,
+    "optMax": 33,
+    "absMin": 10,
+    "absMax": 47
+   },
+   "lluviaAnual": {
+    "optMin": 600,
+    "optMax": 1200,
+    "absMin": 400,
+    "absMax": 1800
+   },
+   "ph": {
+    "optMin": 5,
+    "optMax": 7,
+    "absMin": 4.5,
+    "absMax": 8.5
+   },
+   "altitudMax": 4000,
+   "textura": null,
+   "heladaMata": {
+    "enCrecimiento": null,
+    "enReposo": null
+   },
+   "ciclo": {
+    "min": 65,
+    "max": 365
+   }
+  },
+  "alfalfa": {
+   "especie": "Medicago sativa",
+   "codigoEcocrop": 1428,
+   "url": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1428",
+   "temperatura": {
+    "optMin": 21,
+    "optMax": 27,
+    "absMin": 5,
+    "absMax": 45
+   },
+   "lluviaAnual": {
+    "optMin": 600,
+    "optMax": 1200,
+    "absMin": 350,
+    "absMax": 2700
+   },
+   "ph": {
+    "optMin": 6.5,
+    "optMax": 7.5,
+    "absMin": 4.3,
+    "absMax": 8.7
+   },
+   "altitudMax": 4000,
+   "textura": {
+    "optima": [
+     "media",
+     "gruesa"
+    ],
+    "aceptable": [
+     "media",
+     "gruesa"
+    ]
+   },
+   "heladaMata": {
+    "enCrecimiento": 0,
+    "enReposo": -25
+   },
+   "ciclo": {
+    "min": 100,
+    "max": 210
+   }
+  }
+ }
+}

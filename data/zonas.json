@@ -1,0 +1,57 @@
+{
+  "nota": "Zonas para los escenarios de prueba. Ilave y Mazocruz: coordenadas de la estación del Senamhi (Gobierno Regional de Puno, inventario de estaciones de las cuencas del sur), para comparar con el dato de satélite. Ayaviri y Juliaca: centro de la ciudad (Wikipedia), provisional hasta tener la coordenada de su estación. Las cuatro son de la región sierra.",
+  "zonas": [
+    {
+      "id": "ilave",
+      "distrito": "Ilave",
+      "provincia": "El Collao",
+      "departamento": "Puno",
+      "region": "sierra",
+      "lat": -16.0883,
+      "lon": -69.645,
+      "altitud": 3880,
+      "fuenteCoordenada": "Estación Senamhi Ilave (116027)",
+      "nota": "<b>Dato aún sin validar:</b> en Ilave, NASA POWER marca menos heladas que la estación del Senamhi, porque el cuadro de satélite incluye parte del lago. Lo estamos comparando con otros datos de la NASA (MODIS y SMAP).",
+      "ubigeo": "210501"
+    },
+    {
+      "id": "mazocruz",
+      "distrito": "Santa Rosa (Mazocruz)",
+      "provincia": "El Collao",
+      "departamento": "Puno",
+      "region": "sierra",
+      "lat": -16.7401,
+      "lon": -69.7061,
+      "altitud": 4003,
+      "fuenteCoordenada": "Estación Senamhi Mazocruz (110878)",
+      "nota": "Zona de puna alta, una de las más frías del Perú. El dato de satélite se compara con la estación del Senamhi de Mazocruz.",
+      "ubigeo": "210504"
+    },
+    {
+      "id": "ayaviri",
+      "distrito": "Ayaviri",
+      "provincia": "Melgar",
+      "departamento": "Puno",
+      "region": "sierra",
+      "lat": -14.8818,
+      "lon": -70.5901,
+      "altitud": 3907,
+      "fuenteCoordenada": "Centro de la ciudad (Wikipedia), provisional",
+      "nota": "Coordenada provisional del centro de la ciudad. Falta compararla con la estación del Senamhi de Ayaviri.",
+      "ubigeo": "210801"
+    },
+    {
+      "id": "juliaca",
+      "distrito": "Juliaca",
+      "provincia": "San Román",
+      "departamento": "Puno",
+      "region": "sierra",
+      "lat": -15.4908,
+      "lon": -70.1269,
+      "altitud": 3825,
+      "fuenteCoordenada": "Centro de la ciudad (Wikipedia), provisional",
+      "nota": "Coordenada provisional del centro de la ciudad. Falta compararla con la estación del Senamhi de Juliaca.",
+      "ubigeo": "211101"
+    }
+  ]
+}

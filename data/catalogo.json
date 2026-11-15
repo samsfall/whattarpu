@@ -1,0 +1,1146 @@
+{
+  "version": "2026-11-14",
+  "nota": "Cada dato tiene su fuente. Lo que no tiene fuente queda en null y la app lo muestra como 'pendiente'. No inventar valores.",
+  "fuentes": {
+    "inia317": {
+      "cita": "Instituto Nacional de Innovación Agraria. (s. f.). Papa INIA 317 – Altiplano [Plegable]. Estación Experimental Agraria Illpa-Puno.",
+      "url": "https://core.ac.uk/download/490803592.pdf"
+    },
+    "salcedo": {
+      "cita": "Instituto Nacional de Innovación Agraria. (s. f.). Quinua Salcedo INIA [Plegable].",
+      "url": "https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/78/1/Trip-Quinua_Salcedo_INIA.pdf"
+    },
+    "inia902": {
+      "cita": "Instituto Nacional de Innovación Agraria. (s. f.). Avena INIA 902 – Africana [Plegable]. Estación Experimental Agraria Illpa-Puno.",
+      "url": "https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/657/3/Trip-Avena-INIA902.pdf"
+    },
+    "avenaPunaSeca": {
+      "cita": "Instituto Nacional de Innovación Agraria. (s. f.). Cultivo y henificación de avena forrajera en puna seca.",
+      "url": "https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/1043/1/Inia-Cultivo_y_henificaci%c3%b3n_de_avena_forrajera.pdf"
+    },
+    "nematodo": {
+      "cita": "Instituto Nacional de Innovación Agraria y Plantwise. (2019, octubre). Nematodo del quiste de la papa [Hoja volante].",
+      "url": "https://repositorio.inia.gob.pe/bitstreams/eb1d835e-5367-4f17-8323-8a85d6ede08f/download"
+    },
+    "aynoka": {
+      "cita": "Chila, M. (2002). Manejo tradicional de la biodiversidad cultivada. Biodiversidad, 31, 15 (verificar título).",
+      "url": "https://grain.org/media/W1siZiIsIjIwMTEvMDcvMjUvMDZfMjhfMDJfOTNfYmlvZGl2MzFfM19jaGlsYS5wZGYiXV0"
+    },
+    "quinuaHeladaEtapa": {
+      "cita": "Jacobsen, S. E., Monteros, C., Christiansen, J. E., & Mujica, A. (s. f.). Respuesta de la quinua a heladas [Registro AGRIS; verificar].",
+      "url": "https://agris.fao.org/search/ru/records/6878df965d9ad5f58d604635"
+    },
+    "heladaFao": {
+      "cita": "Helada meteorológica: temperatura del aire igual o menor a 0 °C (FAO-Senamhi).",
+      "url": "https://dialnet.unirioja.es/descarga/articulo/6480004.pdf"
+    },
+    "canihua406": {
+      "cita": "Instituto Nacional de Innovación Agraria. (s. f.). Nueva variedad de cañihua INIA 406 – Illpa [Plegable]. Estación Experimental Agraria Illpa-Puno.",
+      "url": "https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/697/1/Trip-Ca%2b%c2%a6ihua-INIA406.pdf"
+    },
+    "haba401": {
+      "cita": "Instituto Nacional de Innovación Agraria. (s. f.). Haba INIA 401 – Cusco [Plegable]. Para la sierra sur y centro del Perú.",
+      "url": "https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/718/3/Trip-Haba-INIA401.pdf"
+    },
+    "spi": {
+      "cita": "Organización Meteorológica Mundial. (2012). Guía del usuario sobre el Índice normalizado de precipitación (OMM-N.º 1090) (M. Svoboda, M. Hayes y D. Wood). Ginebra.",
+      "url": "https://public.wmo.int/en/resources/library/standardized-precipitation-index-user-guide"
+    },
+    "calendarioSierra": {
+      "cita": "Lobato Gálvez, R. H., et al. (2025). Calendario agrícola: Región Sierra. Instituto Nacional de Innovación Agraria.",
+      "url": "https://repositorio.inia.gob.pe/handle/20.500.12955/2868"
+    },
+    "ecocrop": {
+      "cita": "Organización de las Naciones Unidas para la Alimentación y la Agricultura. (s. f.). ECOCROP: base de datos de requisitos de cultivos. Disponible en la plataforma GAEZ v4.",
+      "url": "https://www.fao.org/land-water/resources/tools/databases/ecocrop/en"
+    },
+    "enis2015": {
+      "cita": "León Carrasco, J. C. (2015, 26 de junio). Puno sembraría más de 150 mil has de cultivos transitorios [Resultados preliminares de la Encuesta Nacional de Intenciones de Siembra 2015-2016, Ministerio de Agricultura y Riego]. Agraria.pe.",
+      "url": "https://agraria.pe/noticias/puno-sembraria-mas-de-150-mil-8559"
+    },
+    "draPuno2023": {
+      "cita": "Red de Medios Regionales del Perú. (2023, 21 de marzo). Puno: Déficit hídrico impacta campaña agrícola 2022-2023 y especialmente en producción de quinua [Reporte de pérdidas y afectaciones por cultivo, Dirección Regional Agraria Puno]. El Búho.",
+      "url": "https://elbuho.pe/?p=283702"
+    },
+    "bcrpPuno2021": {
+      "cita": "Banco Central de Reserva del Perú, Sucursal Puno. (2021). Puno: Síntesis de actividad económica, marzo 2021 [Datos de la Dirección Regional Agraria Puno].",
+      "url": "https://www.bcrp.gob.pe/docs/Sucursales/Puno/2021/presentacion-puno-03-2021.pdf"
+    },
+    "marmolejo2018": {
+      "cita": "Marmolejo Gutarra, D., & Ruiz Velásquez, J. E. (2018). Tolerancia de papas nativas (Solanum spp.) a heladas en el contexto de cambio climático. Scientia Agropecuaria, 9(3), 393–400. https://doi.org/10.17268/sci.agropecu.2018.03.10",
+      "url": "https://doi.org/10.17268/sci.agropecu.2018.03.10"
+    },
+    "alcon2019": {
+      "cita": "Alcon Callejas, D., Bonifacio Flores, A., & Taboada Belmonte, C. (2019). Caracterización morfológica de tubérculos de la papa amarga según el diálogo de saberes. Revista de Investigación e Innovación Agropecuaria y de Recursos Naturales, 6(2), 7–20.",
+      "url": "https://riiarn.umsa.bo/index.php/RIIARn/article/download/123/109/339"
+    }
+  },
+  "cultivos": {
+    "papa": {
+      "nombre": "Papa",
+      "variedadReferencia": "INIA 317 – Altiplano",
+      "icono": "🥔",
+      "siembra": {
+        "desde": "10-16",
+        "hasta": "11-30",
+        "fuente": "inia317"
+      },
+      "duracionDias": {
+        "min": 110,
+        "max": 120,
+        "fuente": "inia317"
+      },
+      "helada": {
+        "texto": "Tolerante a bajas temperaturas (heladas)",
+        "fuente": "inia317"
+      },
+      "hospedaNematodoQuiste": true,
+      "requiereDescansoAnios": {
+        "min": 3,
+        "max": 5,
+        "fuente": "inia317"
+      },
+      "usos": [
+        "comida",
+        "venta"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "altitud": {
+        "min": 2500,
+        "max": 4000,
+        "fuente": "inia317"
+      },
+      "requisitos": {
+        "especie": "Solanum tuberosum",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1971",
+        "temperatura": {
+          "optMin": 15.0,
+          "optMax": 25.0,
+          "absMin": 7.0,
+          "absMax": 30.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 500.0,
+          "optMax": 800.0,
+          "absMin": 250.0,
+          "absMax": 2000.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 5.0,
+          "optMax": 6.2,
+          "absMin": 4.2,
+          "absMax": 8.5,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": -2.5,
+          "enReposo": -1.0,
+          "fuente": "marmolejo2018",
+          "nota": "la mayoría de las variedades cultivadas se dañan bajo −2,5 °C; ECOCROP da 0 °C para la papa común"
+        },
+        "altitud": {
+          "min": 2500,
+          "max": 4000,
+          "fuente": "inia317",
+          "nota": "rango de la variedad (dato local, tiene prioridad)"
+        }
+      }
+    },
+    "papaAmarga": {
+      "nombre": "Papa amarga (para chuño)",
+      "variedadReferencia": "Loq'a",
+      "icono": "🥔",
+      "siembra": {
+        "desde": "10-01",
+        "hasta": "11-30",
+        "fuente": "calendarioSierra"
+      },
+      "duracionDias": {
+        "min": 180,
+        "max": 210,
+        "fuente": "calendarioSierra",
+        "nota": "6 a 7 meses"
+      },
+      "altitud": {
+        "min": 3800,
+        "max": 4500,
+        "fuente": "calendarioSierra"
+      },
+      "helada": {
+        "texto": "Clima frío (Calendario INIA)",
+        "fuente": "calendarioSierra"
+      },
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "nota": "Variedad para la puna alta de Puno (Calendario agrícola Sierra, INIA 2025). Falta confirmar si hospeda al nematodo quiste.",
+      "requisitos": {
+        "especie": "Solanum x juzepczukii",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=9916",
+        "temperatura": {
+          "optMin": 6.0,
+          "optMax": 14.0,
+          "absMin": 3.0,
+          "absMax": 18.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 600.0,
+          "optMax": 1200.0,
+          "absMin": 400.0,
+          "absMax": 1400.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 6.0,
+          "optMax": 7.0,
+          "absMin": 5.5,
+          "absMax": 7.5,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media"
+          ],
+          "aceptable": [
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": -3,
+          "enReposo": null,
+          "fuente": "alcon2019",
+          "nota": "papas amargas: −3 °C (S. curtilobum) a −5 °C (S. juzepczukii, luk'i); se usa el valor más prudente"
+        },
+        "altitud": {
+          "min": 3800,
+          "max": 4500,
+          "fuente": "calendarioSierra",
+          "nota": "rango de la variedad (dato local, tiene prioridad)"
+        }
+      }
+    },
+    "quinua": {
+      "nombre": "Quinua",
+      "variedadReferencia": "Salcedo INIA",
+      "icono": "🌾",
+      "siembra": {
+        "desde": "09-15",
+        "hasta": "10-15",
+        "fuente": "salcedo"
+      },
+      "duracionDias": {
+        "min": 150,
+        "max": 150,
+        "fuente": "salcedo"
+      },
+      "helada": {
+        "texto": "Resistente hasta −2 °C; la helada daña más en floración que en plántula",
+        "fuente": "salcedo",
+        "fuente2": "quinuaHeladaEtapa"
+      },
+      "hospedaNematodoQuiste": false,
+      "requiereDescansoAnios": null,
+      "usos": [
+        "comida",
+        "venta"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "phRango": {
+        "min": 5.5,
+        "max": 7.8,
+        "fuente": "salcedo"
+      },
+      "altitud": {
+        "min": 1284,
+        "max": 3950,
+        "fuente": "salcedo"
+      },
+      "requisitos": {
+        "especie": "Chenopodium quinoa",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2509",
+        "temperatura": {
+          "optMin": 14.0,
+          "optMax": 18.0,
+          "absMin": 2.0,
+          "absMax": 35.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 500.0,
+          "optMax": 1000.0,
+          "absMin": 250.0,
+          "absMax": 2600.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 5.5,
+          "optMax": 7.8,
+          "absMin": 4.5,
+          "absMax": 9.5,
+          "fuente": "salcedo",
+          "fuenteAbs": "ecocrop",
+          "nota": "rango óptimo de la ficha Salcedo INIA; rango aceptable de ECOCROP"
+        },
+        "textura": {
+          "optima": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": -8.0,
+          "enReposo": -8.0,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": 1284,
+          "max": 3950,
+          "fuente": "salcedo",
+          "nota": "rango de la variedad (dato local, tiene prioridad)"
+        }
+      }
+    },
+    "cebada": {
+      "nombre": "Cebada",
+      "icono": "🌾",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": false,
+      "usos": [
+        "comida",
+        "forraje"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "requisitos": {
+        "especie": "Hordeum vulgare",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1232",
+        "temperatura": {
+          "optMin": 15.0,
+          "optMax": 20.0,
+          "absMin": 2.0,
+          "absMax": 40.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 500.0,
+          "optMax": 1000.0,
+          "absMin": 200.0,
+          "absMax": 2000.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 6.5,
+          "optMax": 7.5,
+          "absMin": 6.0,
+          "absMax": 8.0,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": 0.0,
+          "enReposo": -4.0,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": null,
+          "max": 4400.0,
+          "fuente": "ecocrop",
+          "nota": "máximo general de la especie"
+        }
+      }
+    },
+    "oca": {
+      "nombre": "Oca",
+      "icono": "🍠",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "requisitos": {
+        "especie": "Oxalis tuberosa",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2371",
+        "temperatura": {
+          "optMin": 12.0,
+          "optMax": 24.0,
+          "absMin": 5.0,
+          "absMax": 28.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 800.0,
+          "optMax": 1300.0,
+          "absMin": 570.0,
+          "absMax": 2150.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 6.0,
+          "optMax": 7.0,
+          "absMin": 5.3,
+          "absMax": 7.8,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media",
+            "gruesa"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": null,
+          "enReposo": null,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": null,
+          "max": 4000.0,
+          "fuente": "ecocrop",
+          "nota": "máximo general de la especie"
+        }
+      }
+    },
+    "haba": {
+      "nombre": "Haba",
+      "icono": "🫘",
+      "siembra": {
+        "desde": "08-01",
+        "hasta": "09-30",
+        "fuente": "calendarioSierra"
+      },
+      "duracionDias": {
+        "min": 190,
+        "max": 190,
+        "fuente": "calendarioSierra"
+      },
+      "helada": {
+        "texto": "Clima frío (Calendario INIA). La ficha INIA 401 la indica tolerante a heladas y granizadas",
+        "fuente": "calendarioSierra"
+      },
+      "hospedaNematodoQuiste": false,
+      "usos": [
+        "comida",
+        "venta"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "variedadReferencia": "INIA 423 – Blanca Gigante Yunguyo",
+      "nota": "Variedad adaptada a Puno (Calendario agrícola Sierra, INIA 2025).",
+      "altitud": {
+        "min": 3000,
+        "max": 3870,
+        "fuente": "calendarioSierra"
+      },
+      "requisitos": {
+        "especie": "Vicia faba",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2146",
+        "temperatura": {
+          "optMin": 18.0,
+          "optMax": 28.0,
+          "absMin": 5.0,
+          "absMax": 32.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 650.0,
+          "optMax": 1000.0,
+          "absMin": 250.0,
+          "absMax": 2600.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 6.0,
+          "optMax": 7.0,
+          "absMin": 4.5,
+          "absMax": 8.6,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": null,
+          "enReposo": null,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": 3000,
+          "max": 3870,
+          "fuente": "calendarioSierra",
+          "nota": "rango de la variedad (dato local, tiene prioridad)"
+        }
+      }
+    },
+    "avena": {
+      "nombre": "Avena forrajera",
+      "variedadReferencia": "INIA 902 – Africana",
+      "icono": "🌿",
+      "siembra": {
+        "desde": "11-01",
+        "hasta": "12-07",
+        "fuente": "inia902"
+      },
+      "duracionDias": {
+        "min": 150,
+        "max": 150,
+        "fuente": "avenaPunaSeca",
+        "nota": "cosecha a los cinco meses; corte de abril a mayo"
+      },
+      "helada": null,
+      "hospedaNematodoQuiste": false,
+      "requiereDescansoAnios": null,
+      "usos": [
+        "forraje"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "altitud": {
+        "min": 3812,
+        "max": 4000,
+        "fuente": "calendarioSierra"
+      },
+      "requisitos": {
+        "especie": "Avena sativa",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=481",
+        "temperatura": {
+          "optMin": 16.0,
+          "optMax": 20.0,
+          "absMin": 5.0,
+          "absMax": 30.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 600.0,
+          "optMax": 1000.0,
+          "absMin": 250.0,
+          "absMax": 1500.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 5.0,
+          "optMax": 6.0,
+          "absMin": 4.5,
+          "absMax": 7.5,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": -1.0,
+          "enReposo": -15.0,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": 3812,
+          "max": 4000,
+          "fuente": "calendarioSierra",
+          "nota": "rango de la variedad (dato local, tiene prioridad)"
+        }
+      }
+    },
+    "tarwi": {
+      "nombre": "Tarwi (chocho)",
+      "icono": "🌱",
+      "siembra": {
+        "desde": "11-01",
+        "hasta": "11-30",
+        "fuente": "calendarioSierra"
+      },
+      "duracionDias": {
+        "min": 210,
+        "max": 240,
+        "fuente": "calendarioSierra"
+      },
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "variedadReferencia": "Andenes 90",
+      "altitud": {
+        "min": 3000,
+        "max": 3700,
+        "fuente": "calendarioSierra"
+      },
+      "nota": "Calendario INIA: adaptada a Puno entre 3000 y 3700 m.",
+      "requisitos": {
+        "especie": "Lupinus mutabilis",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=7435",
+        "temperatura": {
+          "optMin": 18.0,
+          "optMax": 24.0,
+          "absMin": 6.0,
+          "absMax": 30.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 500.0,
+          "optMax": 1000.0,
+          "absMin": 350.0,
+          "absMax": 1700.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 5.0,
+          "optMax": 6.5,
+          "absMin": 4.5,
+          "absMax": 7.0,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media",
+            "gruesa"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": -5.0,
+          "enReposo": -5.0,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": 3000,
+          "max": 3700,
+          "fuente": "calendarioSierra",
+          "nota": "rango de la variedad (dato local, tiene prioridad)"
+        }
+      }
+    },
+    "canihua": {
+      "nombre": "Cañihua",
+      "icono": "🌾",
+      "siembra": {
+        "desde": "10-15",
+        "hasta": "11-15",
+        "fuente": "canihua406"
+      },
+      "duracionDias": {
+        "min": 140,
+        "max": 140,
+        "fuente": "canihua406"
+      },
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "variedadReferencia": "INIA 406 – Illpa",
+      "nota": "Ficha INIA: secano, de 3815 a 4000 m s. n. m.; rotación después de papa amarga.",
+      "altitud": {
+        "min": 3815,
+        "max": 4000,
+        "fuente": "calendarioSierra"
+      },
+      "requisitos": {
+        "especie": "Chenopodium pallidicaule",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=4494",
+        "temperatura": {
+          "optMin": 10.0,
+          "optMax": 16.0,
+          "absMin": 5.0,
+          "absMax": 28.0,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 500.0,
+          "optMax": 800.0,
+          "absMin": 300.0,
+          "absMax": 1100.0,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 6.0,
+          "optMax": 7.5,
+          "absMin": 4.8,
+          "absMax": 8.5,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media",
+            "gruesa"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": -3.0,
+          "enReposo": -10.0,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": 3815,
+          "max": 4000,
+          "fuente": "calendarioSierra",
+          "nota": "rango de la variedad (dato local, tiene prioridad)"
+        }
+      }
+    },
+    "olluco": {
+      "nombre": "Olluco",
+      "icono": "🟡",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "seSiembraEnPuno": {
+        "dato": "2 796 ha de intención de siembra en Puno (ENIS 2015-2016)",
+        "fuentes": [
+          "enis2015",
+          "draPuno2023"
+        ]
+      },
+      "requisitos": {
+        "especie": "Ullucus tuberosus",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2120",
+        "temperatura": {
+          "optMin": 12,
+          "optMax": 20,
+          "absMin": 5,
+          "absMax": 28,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 1100,
+          "optMax": 1400,
+          "absMin": 800,
+          "absMax": 1800,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 5.5,
+          "optMax": 6.5,
+          "absMin": 5,
+          "absMax": 7,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": 0,
+          "enReposo": -4,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": null,
+          "max": 4000,
+          "fuente": "ecocrop",
+          "nota": "máximo general de la especie"
+        }
+      }
+    },
+    "trigo": {
+      "nombre": "Trigo",
+      "icono": "🌾",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "seSiembraEnPuno": {
+        "dato": "1 521 ha de intención de siembra en Puno (ENIS 2015-2016)",
+        "fuentes": [
+          "enis2015"
+        ]
+      },
+      "requisitos": {
+        "especie": "Triticum aestivum",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2114",
+        "temperatura": {
+          "optMin": 15,
+          "optMax": 23,
+          "absMin": 5,
+          "absMax": 27,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 750,
+          "optMax": 900,
+          "absMin": 300,
+          "absMax": 1600,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 6,
+          "optMax": 7,
+          "absMin": 5.5,
+          "absMax": 8.5,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media"
+          ],
+          "aceptable": [
+            "fina",
+            "media"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": 0,
+          "enReposo": -20,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": null,
+          "max": 4500,
+          "fuente": "ecocrop",
+          "nota": "máximo general de la especie"
+        }
+      }
+    },
+    "arveja": {
+      "nombre": "Arveja grano seco",
+      "icono": "🫛",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "seSiembraEnPuno": {
+        "dato": "1 188 ha de intención de siembra en Puno (ENIS 2015-2016)",
+        "fuentes": [
+          "enis2015",
+          "draPuno2023"
+        ]
+      },
+      "requisitos": {
+        "especie": "Pisum sativum",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1721",
+        "temperatura": {
+          "optMin": 10,
+          "optMax": 24,
+          "absMin": 4,
+          "absMax": 30,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 800,
+          "optMax": 1200,
+          "absMin": 350,
+          "absMax": 2500,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 5.5,
+          "optMax": 7,
+          "absMin": 4.5,
+          "absMax": 8.3,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "aceptable": [
+            "fina",
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": 0,
+          "enReposo": -2,
+          "fuente": "ecocrop"
+        }
+      },
+      "pendiente": [
+        "ECOCROP da un máximo de 2700 m, pero la DRA Puno registra siembras de arveja en el departamento: falta una ficha local de altura (no se usa la altura hasta tenerla)."
+      ]
+    },
+    "maizAmilaceo": {
+      "nombre": "Maíz amiláceo",
+      "icono": "🌽",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "comida"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "seSiembraEnPuno": {
+        "dato": "4 063 ha de intención de siembra en Puno (ENIS 2015-2016)",
+        "fuentes": [
+          "enis2015"
+        ]
+      },
+      "requisitos": {
+        "especie": "Zea mays",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=2175",
+        "temperatura": {
+          "optMin": 18,
+          "optMax": 33,
+          "absMin": 10,
+          "absMax": 47,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 600,
+          "optMax": 1200,
+          "absMin": 400,
+          "absMax": 1800,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 5,
+          "optMax": 7,
+          "absMin": 4.5,
+          "absMax": 8.5,
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": null,
+          "enReposo": null,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": null,
+          "max": 4000,
+          "fuente": "ecocrop",
+          "nota": "máximo general de la especie"
+        }
+      },
+      "pendiente": [
+        "ECOCROP trata el maíz en general, no la raza amilácea andina; falta ficha local. Sin dato de textura en ECOCROP."
+      ]
+    },
+    "alfalfa": {
+      "nombre": "Alfalfa",
+      "icono": "🌿",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [
+        "forraje"
+      ],
+      "regiones": [
+        "sierra"
+      ],
+      "seSiembraEnPuno": {
+        "dato": "cultivo forrajero registrado por la DRA Puno",
+        "fuentes": [
+          "bcrpPuno2021",
+          "draPuno2023"
+        ]
+      },
+      "requisitos": {
+        "especie": "Medicago sativa",
+        "fichaEcocrop": "https://ecocrop.apps.fao.org/ecocrop/srv/en/dataSheet?id=1428",
+        "temperatura": {
+          "optMin": 21,
+          "optMax": 27,
+          "absMin": 5,
+          "absMax": 45,
+          "fuente": "ecocrop",
+          "nota": "temperatura media de los meses de cultivo"
+        },
+        "lluviaAnual": {
+          "optMin": 600,
+          "optMax": 1200,
+          "absMin": 350,
+          "absMax": 2700,
+          "fuente": "ecocrop"
+        },
+        "ph": {
+          "optMin": 6.5,
+          "optMax": 7.5,
+          "absMin": 4.3,
+          "absMax": 8.7,
+          "fuente": "ecocrop"
+        },
+        "textura": {
+          "optima": [
+            "media",
+            "gruesa"
+          ],
+          "aceptable": [
+            "media",
+            "gruesa"
+          ],
+          "fuente": "ecocrop"
+        },
+        "heladaMata": {
+          "enCrecimiento": 0,
+          "enReposo": -25,
+          "fuente": "ecocrop"
+        },
+        "altitud": {
+          "min": null,
+          "max": 4000,
+          "fuente": "ecocrop",
+          "nota": "máximo general de la especie"
+        }
+      },
+      "perenne": true,
+      "pendiente": [
+        "Es perenne: ocupa la chacra más de una campaña; la rotación anual no lo trata aún."
+      ]
+    },
+    "otro": {
+      "nombre": "Otro cultivo",
+      "icono": "➕",
+      "siembra": null,
+      "duracionDias": null,
+      "helada": null,
+      "hospedaNematodoQuiste": null,
+      "usos": [],
+      "regiones": [
+        "sierra"
+      ]
+    }
+  },
+  "rotacionNematodo": {
+    "texto": "Rotar 3 a 5 años con haba, arveja, cebada, quinua o avena; los quistes pueden quedar hasta 20 años en el suelo",
+    "fuente": "nematodo"
+  },
+  "aynoka": {
+    "secuencia": [
+      "descanso",
+      "papa",
+      "quinua",
+      "avena",
+      "descanso"
+    ],
+    "texto": "Papa → granos (quinua, cañahua, trigo) → forrajes (cebada, avena) → descanso de varios años",
+    "fuente": "aynoka"
+  },
+  "nota_regiones": "Cada cultivo indica en qué regiones del Perú está en el catálogo. El MVP solo tiene cultivos de sierra (Puno); costa y selva se agregan con sus propias fichas e íconos."
+}

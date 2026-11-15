@@ -1,0 +1,24 @@
+{
+  "name": "whattarpu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Apoyo para decidir qué rotación sembrar y cuándo en Puno, con datos de la NASA.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "probar-pantallas": "node --test pruebas-pantallas/*.test.mjs",
+    "revisar": "eslint .",
+    "todo": "npm run revisar && npm test && npm run probar-pantallas",
+    "historial": "node scripts/generar-historial.mjs",
+    "avisos": "node scripts/descargar-avisos-senamhi.mjs",
+    "servir": "python3 -m http.server 8000",
+    "catalogo": "node scripts/catalogo-requisitos.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^17.14.0",
+    "playwright-core": "^1.65.1"
+  }
+}

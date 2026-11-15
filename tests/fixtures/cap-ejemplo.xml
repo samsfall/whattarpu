@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Archivo de PRUEBA con la estructura estándar CAP 1.2. No es un aviso real. -->
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>prueba-001</identifier><sent>2026-11-15T07:00:00-05:00</sent>
+  <info>
+    <language>es-PE</language><event>Descenso de temperatura nocturna</event>
+    <severity>Moderate</severity>
+    <onset>2026-11-16T00:00:00-05:00</onset><expires>2026-11-18T23:59:00-05:00</expires>
+    <headline>Texto de prueba</headline><description>Descripción de prueba.</description>
+    <web>https://ejemplo.invalid/aviso</web>
+    <area><areaDesc>Puno - El Collao</areaDesc></area>
+    <area><areaDesc>Cusco - Canchis</areaDesc></area>
+  </info>
+</alert>
