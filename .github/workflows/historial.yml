@@ -13,6 +13,9 @@ permissions:
 jobs:
   historial:
     runs-on: ubuntu-latest
+    env:
+      EARTHDATA_USER: ${{ secrets.EARTHDATA_USER }}
+      EARTHDATA_PASS: ${{ secrets.EARTHDATA_PASS }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,10 +24,7 @@ jobs:
       - run: node --test tests/*.test.mjs
       - run: node scripts/generar-historial.mjs
       - name: Datos NASA con cuenta Earthdata (MODIS vía AppEEARS)
-        if: ${{ secrets.EARTHDATA_USER != '' }}
-        env:
-          EARTHDATA_USER: ${{ secrets.EARTHDATA_USER }}
-          EARTHDATA_PASS: ${{ secrets.EARTHDATA_PASS }}
+        if: ${{ env.EARTHDATA_USER != '' }}
         run: node scripts/descargar-nasa-earthdata.mjs
       - name: Guardar tablas en el repositorio
         run: |
